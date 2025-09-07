@@ -1,5 +1,6 @@
-import PropertyListing from "@/components/PropertyListing";
-import { styles } from "@/styles/_homestyle";
+import React from "react";
+import PropertyListing from "../../components/PropertyListing"; 
+import { styles } from "../../styles/_mainstyle";
 import { Feather } from "@expo/vector-icons";
 import {
   View,
@@ -7,10 +8,9 @@ import {
   TextInput,
   Image,
   ScrollView,
-  Dimensions,
   TouchableHighlight,
 } from "react-native";
-import { FILTERS, SAMPLE_DATA } from "@/constants/data";
+import { FILTERS, SAMPLE_DATA } from "../../constants/data";
 
 const Home = () => {
   return (
@@ -30,21 +30,14 @@ const Home = () => {
         </View>
       </View>
 
-      <View
-        style={{
-          height: 72,
-          backgroundColor: "white",
-        }}
-      >
+      <View style={{ height: 72, backgroundColor: "white" }}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={styles.filterGroup}>
             {FILTERS.map((filter, index) => (
               <View style={styles.filterContainer} key={index}>
                 <Image
-                  style={{
-                    flex: 1,
-                  }}
-                  source={require("@/assets/images/mansion.png")}
+                  style={{ flex: 1 }}
+                  source={require("../../assets/images/mansion.jpg")}
                   resizeMode="contain"
                 />
                 <Text>{filter}</Text>
